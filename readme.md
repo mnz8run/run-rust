@@ -3,6 +3,8 @@
 `cargo run --bin z_guessing_game`
 `cargo run -p y_variables`
 
+或者到相应目录下 `cargo run`
+
 ## epic
 
 cargo init
