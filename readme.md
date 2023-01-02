@@ -1,6 +1,7 @@
 ## workspace
 
 `cargo run --bin z_guessing_game`
+`cargo run -p y_variables`
 
 ## epic
 
