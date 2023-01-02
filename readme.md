@@ -1,12 +1,18 @@
+## workspace
+
+`cargo run --bin z_guessing_game`
+
+## epic
+
 cargo init
 
-## version
+### version
 
 rust: 1.65.0
 cargo: 1.65.0
 rustup: 1.25.1
 
-## Keywords
+### Keywords
 
 ```
 KW_CONST : const
