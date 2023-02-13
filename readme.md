@@ -1,7 +1,7 @@
 ## workspace
 
-`cargo run --bin z_guessing_game`
 `cargo run -p y_variables`
+`cargo run --bin z_guessing_game`
 
 或者到相应目录下 `cargo run`
 
