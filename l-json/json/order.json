@@ -1,0 +1,21 @@
+{
+    "111": {
+        "name": "xxxx",
+        "id": 222,
+        "aa": {
+            "bb": [
+                1234
+            ]
+        }
+    },
+    "333": {
+        "name": "yyyy",
+        "id": 123,
+        "bannerUrl": "呵呵"
+    },
+    "222": {
+        "name": "zzzz",
+        "id": 555,
+        "bannerUrl": null
+    }
+}

@@ -5,6 +5,10 @@
 
 或者到相应目录下 `cargo run`
 
+### example
+
+`cargo run --example comfy_table`
+
 ## epic
 
 cargo init
