@@ -5,7 +5,7 @@ use std::fs;
 use std::path::Path;
 
 fn main() {
-    let demo_file_path = Path::new("l-json/json/order.json");
+    let demo_file_path = Path::new("feel/pest/json/order.json");
     let unparsed_file = fs::read_to_string(demo_file_path).expect("cannot read file");
     let json: JSONValue = parse_json_file(&unparsed_file).expect("unsuccessful parse");
 

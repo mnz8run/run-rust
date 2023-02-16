@@ -1,8 +1,30 @@
 [workspace]
-
-members = ['z_guessing_game', 'y_variables', "n-rand-char", "l-json"]
+members = [
+    'note/z_guessing_game',
+    'note/y_variables',
+    "note/n-rand-char",
+    "feel/comfy-table",
+    "feel/pest",
+]
 
 [workspace.dependencies]
 rand = "0.8.5"
+comfy-table = "6.1.4"
 pest = "2.5.5"
 pest_derive = "2.5.5"
+
+# workspace 的情况下，如果 package-name 和 workspace.dependencies 相同
+# cargo run -p package-name, eg: cargo run -p pest, 会出下如下错误：
+
+# error: There are multiple `comfy-table` packages in your project, and the specification `comfy-table` is ambiguous.
+# Please re-run this command with `-p <spec>` where `<spec>` is one of the following:
+#   comfy-table@0.1.0
+#   comfy-table@6.1.4
+
+# error: There are multiple `pest` packages in your project, and the specification `pest` is ambiguous.
+# Please re-run this command with `-p <spec>` where `<spec>` is one of the following:
+#   pest@0.1.0
+#   pest@2.5.5
+
+# 不在 workspace 的 cargo.toml 下，在 package 的 cargo.toml 是可以的
+# 或者使用 cargo run --bin bin-name eg: cargo run --bin pest
