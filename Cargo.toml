@@ -13,7 +13,7 @@ comfy-table = "6.1.4"
 pest = "2.5.5"
 pest_derive = "2.5.5"
 
-# workspace 的情况下，如果 package-name 和 workspace.dependencies 相同
+# 所有的 cargo.toml 中，package-name 和 dependencies 中的相同
 # cargo run -p package-name, eg: cargo run -p pest, 会出下如下错误：
 
 # error: There are multiple `comfy-table` packages in your project, and the specification `comfy-table` is ambiguous.
@@ -26,5 +26,4 @@ pest_derive = "2.5.5"
 #   pest@0.1.0
 #   pest@2.5.5
 
-# 不在 workspace 的 cargo.toml 下，在 package 的 cargo.toml 是可以的
-# 或者使用 cargo run --bin bin-name eg: cargo run --bin pest
+# 使用 cargo run --bin bin-name 可以运行 eg: cargo run --bin pest
