@@ -87,7 +87,8 @@ use std::fs;
 use std::path::Path;
 
 fn main() {
-    let demo_file_path = Path::new("l-json/json/data.json");
+    // 这个路径根 target 同级，为起始的路径
+    let demo_file_path = Path::new("feel/pest/json/data.json");
     let unparsed_file = fs::read_to_string(demo_file_path).expect("cannot read file");
 
     let json: JSONValue = parse_json_file(&unparsed_file).expect("unsuccessful parse");

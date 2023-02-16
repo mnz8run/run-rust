@@ -31,6 +31,13 @@ checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 
 [[package]]
 name = "comfy-table"
+version = "0.1.0"
+dependencies = [
+ "comfy-table 6.1.4",
+]
+
+[[package]]
+name = "comfy-table"
 version = "6.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6e7b787b0dc42e8111badfdbe4c3059158ccb2db8780352fa1b01e8ccf45cc4d"
@@ -123,15 +130,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "95505c38b4572b2d910cecb0281560f54b440a19336cbbcb27bf6ce6adc6f5a8"
 
 [[package]]
-name = "l-json"
-version = "0.1.0"
-dependencies = [
- "comfy-table",
- "pest",
- "pest_derive",
-]
-
-[[package]]
 name = "libc"
 version = "0.2.139"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -206,6 +204,15 @@ dependencies = [
 
 [[package]]
 name = "pest"
+version = "0.1.0"
+dependencies = [
+ "comfy-table 6.1.4",
+ "pest 2.5.5",
+ "pest_derive",
+]
+
+[[package]]
+name = "pest"
 version = "2.5.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "028accff104c4e513bad663bbcd2ad7cfd5304144404c31ed0a77ac103d00660"
@@ -220,7 +227,7 @@ version = "2.5.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2ac3922aac69a40733080f53c1ce7f91dcf57e1a5f6c52f421fadec7fbdc4b69"
 dependencies = [
- "pest",
+ "pest 2.5.5",
  "pest_generator",
 ]
 
@@ -230,7 +237,7 @@ version = "2.5.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d06646e185566b5961b4058dd107e0a7f56e77c3f484549fb119867773c0f202"
 dependencies = [
- "pest",
+ "pest 2.5.5",
  "pest_meta",
  "proc-macro2",
  "quote",
@@ -244,7 +251,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e6f60b2ba541577e2a0c307c8f39d1439108120eb7903adeb6497fa880c59616"
 dependencies = [
  "once_cell",
- "pest",
+ "pest 2.5.5",
  "sha2",
 ]
 
