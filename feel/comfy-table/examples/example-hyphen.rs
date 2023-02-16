@@ -1,3 +1,3 @@
 fn main() {
-    println!("example-hyphen");
+    println!("连字符命名的文件");
 }
