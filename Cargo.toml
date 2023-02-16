@@ -10,8 +10,6 @@ members = [
 [workspace.dependencies]
 rand = "0.8.5"
 comfy-table = "6.1.4"
-pest = "2.5.5"
-pest_derive = "2.5.5"
 
 # 所有的 cargo.toml 中，package-name 和 dependencies 中的相同
 # cargo run -p package-name, eg: cargo run -p pest, 会出下如下错误：
