@@ -1,23 +1,37 @@
-## workspace
+## run
 
-`cargo run -p y_variables`
-`cargo run --bin z_guessing_game`
+run in workspace
 
-或者到相应目录下 `cargo run`
+可以到相应目录下 `cargo run`
+
+根目录下 packeage, bin, example 都可以运行
+
+packeage 可以跨目录运行，bin, example 不可以跨目录
+
+eg: feel/pest 下不能运行 `cargo run --bin feel-comfy-table`, `cargo run --example comfy_table`
+
+### package
+
+`cargo run -p feel-comfy-table`
+
+### bin
+
+`cargo run --bin feel-comfy-table`
 
 ### example
 
 `cargo run --example comfy_table`
+`cargo run --example hyphen-named`
+
+## version
+
+rust: 1.67.1
+cargo: 1.67.1
+rustup: 1.25.2
 
 ## epic
 
 cargo init
-
-### version
-
-rust: 1.65.0
-cargo: 1.65.0
-rustup: 1.25.1
 
 ### Keywords
 
