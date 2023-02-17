@@ -9,9 +9,9 @@ edition = "2021"
 comfy-table = { workspace = true }
 
 [[example]]
-name = "comfy-table"
+name = "comfy_table"
 path = "examples/comfy_table.rs"
 
 [[example]]
-name = "example-hyphen"
-path = "examples/example-hyphen.rs"
+name = "hyphen-named"
+path = "examples/hyphen-named.rs"
