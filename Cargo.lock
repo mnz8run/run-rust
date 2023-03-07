@@ -176,13 +176,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "n-rand-char"
-version = "0.1.0"
-dependencies = [
- "rand",
-]
-
-[[package]]
 name = "once_cell"
 version = "1.17.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -291,6 +284,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "rand-char"
+version = "0.1.0"
+dependencies = [
+ "rand",
+]
+
+[[package]]
 name = "rand_chacha"
 version = "0.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -317,6 +317,18 @@ checksum = "fb5a58c1855b4b6819d59012155603f0b22ad30cad752600aadfcb695265519a"
 dependencies = [
  "bitflags",
 ]
+
+[[package]]
+name = "rpl-data"
+version = "0.1.0"
+
+[[package]]
+name = "rpl-function"
+version = "0.1.0"
+
+[[package]]
+name = "rpl-variable"
+version = "0.1.0"
 
 [[package]]
 name = "rustversion"
@@ -550,14 +562,3 @@ name = "windows_x86_64_msvc"
 version = "0.42.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "447660ad36a13288b1db4d4248e857b510e8c3a225c822ba4fb748c0aafecffd"
-
-[[package]]
-name = "y_variables"
-version = "0.1.0"
-
-[[package]]
-name = "z_guessing_game"
-version = "0.1.0"
-dependencies = [
- "rand",
-]
