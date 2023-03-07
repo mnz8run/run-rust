@@ -1,11 +1,5 @@
 [workspace]
-members = [
-    'note/z_guessing_game',
-    'note/y_variables',
-    "note/n-rand-char",
-    "feel/comfy-table",
-    "feel/pest",
-]
+members = ["note/*", "feel/*", "book-rpl/[1-3]-*"]
 
 [workspace.dependencies]
 rand = "0.8.5"
