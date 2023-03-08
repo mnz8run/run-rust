@@ -13,4 +13,23 @@ fn main() {
     println!("{five_hundred}");
     // ======================= 数组 =======================
     // 类型必须相同，长度固定
+    let array = [1, 2, 3, 4, 5];
+    println!("{:?}", array);
+
+    // 数组类型 分号前声明类型，分号后声明数量
+    let explicit_array: [i32; 5] = [6, 7, 8, 9, 10];
+    // 创建多个相同元素数组 分号前是元素，分号后是数量
+    let same_array = [567; 13];
+    let same_char_array = ['o'; 7];
+    println!("{:?}", explicit_array);
+    println!("{:?}", same_array);
+    println!("{:?}", same_char_array);
+
+    // 解构数组
+    let [_a, _b, c, _d, _e] = array;
+    println!("{c}");
+
+    // 索引访问
+    let first_char = same_char_array[0];
+    println!("{first_char}");
 }
