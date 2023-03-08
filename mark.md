@@ -1,4 +1,5 @@
 variable
+function
 data
 
     integer
@@ -7,14 +8,16 @@ data
     character
     tuple
     array
+    struct
     enum
     vector
     string
     hash map
 
-function
-iterator
-closure
+ownership
+reference
+slice
+method
 control
 
     if
@@ -23,15 +26,11 @@ control
     match
     if let
 
-ownership
-reference
-slice
-
-struct
-method
 generic
 trait
 lifetime
+closure
+iterator
 
 package
 crate
