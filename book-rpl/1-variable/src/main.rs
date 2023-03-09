@@ -3,6 +3,7 @@ fn main() {
     // Rust 对常量的命名约定是在单词之间使用全大写加下划线
     const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
 
+    // 变量名使用 snake case 规范风格
     // 不可变变量
     let x = 5;
 
