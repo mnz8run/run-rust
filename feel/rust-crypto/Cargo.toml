@@ -1,0 +1,17 @@
+[package]
+name = "feel-rust-crypto"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rust-crypto = "^0.2"
+
+[[example]]
+name = "md5"
+path = "examples/md5.rs"
+
+[[example]]
+name = "aes"
+path = "examples/aes.rs"
