@@ -6,6 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+base64 = "0.21.0"
 rust-crypto = "^0.2"
 
 [[example]]
@@ -15,3 +16,8 @@ path = "examples/md5.rs"
 [[example]]
 name = "aes"
 path = "examples/aes.rs"
+
+
+[[example]]
+name = "aes-ctr"
+path = "examples/aes-ctr.rs"
