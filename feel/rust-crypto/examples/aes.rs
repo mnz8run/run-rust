@@ -50,7 +50,7 @@ pub fn aes_cbc_mode() {
 }
 
 // Encrypt a buffer with the given key and iv using AES-256/CBC/Pkcs encryption.
-// keywords: aes cbc pkcs7 utf-8 base64
+// keywords: aes cbc 256 pkcs7 utf-8 base64
 fn aes256_cbc_encrypt(
     data: &[u8],
     key: &[u8],
