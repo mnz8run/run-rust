@@ -1,3 +1,14 @@
+## prelude
+
+macros
+test
+cargo
+package
+crate
+module
+
+## main
+
 variable
 function
 data
@@ -14,10 +25,8 @@ data
     string
     hash map
 
-ownership
-reference
-slice
 method
+
 control
 
     if
@@ -26,15 +35,16 @@ control
     match
     if let
 
+## uncertain
+
+ownership
+reference
+slice
+
 generic
 trait
 lifetime
 closure
 iterator
 
-package
-crate
-module
 error handle
-test
-cargo
