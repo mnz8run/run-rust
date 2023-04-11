@@ -392,11 +392,79 @@ dependencies = [
 ]
 
 [[package]]
+name = "rpl-cargo"
+version = "0.1.0"
+
+[[package]]
+name = "rpl-closure"
+version = "0.1.0"
+
+[[package]]
+name = "rpl-control"
+version = "0.1.0"
+
+[[package]]
+name = "rpl-crate"
+version = "0.1.0"
+
+[[package]]
 name = "rpl-data"
 version = "0.1.0"
 
 [[package]]
+name = "rpl-error-handle"
+version = "0.1.0"
+
+[[package]]
 name = "rpl-function"
+version = "0.1.0"
+
+[[package]]
+name = "rpl-generic"
+version = "0.1.0"
+
+[[package]]
+name = "rpl-iterator"
+version = "0.1.0"
+
+[[package]]
+name = "rpl-lifetime"
+version = "0.1.0"
+
+[[package]]
+name = "rpl-macros"
+version = "0.1.0"
+
+[[package]]
+name = "rpl-method"
+version = "0.1.0"
+
+[[package]]
+name = "rpl-module"
+version = "0.1.0"
+
+[[package]]
+name = "rpl-ownership"
+version = "0.1.0"
+
+[[package]]
+name = "rpl-package"
+version = "0.1.0"
+
+[[package]]
+name = "rpl-reference"
+version = "0.1.0"
+
+[[package]]
+name = "rpl-slice"
+version = "0.1.0"
+
+[[package]]
+name = "rpl-test"
+version = "0.1.0"
+
+[[package]]
+name = "rpl-trait"
 version = "0.1.0"
 
 [[package]]
