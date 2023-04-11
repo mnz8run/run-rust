@@ -17,7 +17,14 @@ path = "examples/md5.rs"
 name = "aes"
 path = "examples/aes.rs"
 
-
 [[example]]
 name = "aes-ctr"
 path = "examples/aes-ctr.rs"
+
+[[example]]
+name = "aes-e"
+path = "examples/aes_encrypt.rs"
+
+[[example]]
+name = "aes-d"
+path = "examples/aes_decrypt.rs"
