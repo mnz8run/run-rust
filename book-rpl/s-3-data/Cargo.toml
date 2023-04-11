@@ -1,0 +1,36 @@
+[package]
+name = "rpl-data"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[[example]]
+name = "scalar"
+path = "scalar.rs"
+
+[[example]]
+name = "compound"
+path = "compound.rs"
+
+[[example]]
+name = "struct"
+path = "struct.rs"
+
+[[example]]
+name = "enum"
+path = "enum.rs"
+
+[[example]]
+name = "vector"
+path = "vector.rs"
+
+[[example]]
+name = "string"
+path = "string.rs"
+
+[[example]]
+name = "hash-map"
+path = "hash-map.rs"
