@@ -23,7 +23,7 @@ fn serialize_jsonvalue(val: &JSONValue) -> String {
         String(s) => format!("\"{}\"", s),
         Number(n) => format!("{}", n),
         Boolean(b) => format!("{}", b),
-        Null => format!("null"),
+        Null => "null".to_string(),
     }
 }
 
