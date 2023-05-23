@@ -34,7 +34,7 @@ fn aes256_ctr_encrypt(data: &[u8], key: &[u8], iv: &[u8]) -> Result<Vec<u8>, sym
     let mut encoder = CtrMode::new(AesSafe256Encryptor::new(key), iv.to_vec());
     encoder.encrypt(&mut read_buffer, &mut write_buffer, true)?;
 
-    final_result.extend(write_buffer.take_read_buffer().take_remaining().iter().map(|&i| i));
+    final_result.extend(write_buffer.take_read_buffer().take_remaining().iter().copied());
     Ok(final_result)
 }
 
@@ -47,6 +47,6 @@ fn aes256_ctr_decrypt(encrypted_data: &[u8], key: &[u8], iv: &[u8]) -> Result<Ve
     let mut decoder = CtrMode::new(AesSafe256Encryptor::new(key), iv.to_vec());
     decoder.decrypt(&mut read_buffer, &mut write_buffer, true)?;
 
-    final_result.extend(write_buffer.take_read_buffer().take_remaining().iter().map(|&i| i));
+    final_result.extend(write_buffer.take_read_buffer().take_remaining().iter().copied());
     Ok(final_result)
 }

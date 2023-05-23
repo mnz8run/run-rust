@@ -19,7 +19,7 @@ fn aes256_cbc_encrypt(data: &[u8], key: &[u8], iv: &[u8]) -> Result<Vec<u8>, Sym
     loop {
         let result = encryptor.encrypt(&mut read_buffer, &mut write_buffer, true)?;
 
-        final_result.extend(write_buffer.take_read_buffer().take_remaining().iter().map(|&i| i));
+        final_result.extend(write_buffer.take_read_buffer().take_remaining().iter().copied());
 
         match result {
             BufferResult::BufferUnderflow => break,
@@ -45,9 +45,9 @@ fn aes_cbc_mode(message: &str, key: &str) -> String {
         .ok()
         .expect("encrypted_data there_error");
 
-    let encrypted_base64 = general_purpose::STANDARD.encode(&encrypted_data);
+    let encrypted_base64 = general_purpose::STANDARD.encode(encrypted_data);
 
-    return encrypted_base64;
+    encrypted_base64
 }
 
 fn main() {

@@ -18,7 +18,7 @@ fn aes256_cbc_decrypt(encrypted_data: &[u8], key: &[u8], iv: &[u8]) -> Result<Ve
 
     loop {
         let result = decryptor.decrypt(&mut read_buffer, &mut write_buffer, true)?;
-        final_result.extend(write_buffer.take_read_buffer().take_remaining().iter().map(|&i| i));
+        final_result.extend(write_buffer.take_read_buffer().take_remaining().iter().copied());
         match result {
             BufferResult::BufferUnderflow => break,
             BufferResult::BufferOverflow => {}
@@ -57,7 +57,7 @@ fn aes_cbc_mode(message: &str, key: &str) -> String {
 
     let crypt_message = String::from_utf8(decrypted_data).expect("crypt_message there_error");
 
-    return crypt_message;
+    crypt_message
 }
 
 fn main() {
