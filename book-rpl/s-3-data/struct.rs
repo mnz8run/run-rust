@@ -12,11 +12,7 @@ struct Struct {
 }
 fn main() {
     // 创建实例
-    let s1 = Struct {
-        a: 7,
-        b: true,
-        c: 7.13,
-    };
+    let s1 = Struct { a: 7, b: true, c: 7.13 };
     println!("{:?}", s1);
     // 对应字段的使用
     println!("{}", s1.a);
@@ -24,21 +20,13 @@ fn main() {
 
     // 改变实例字段值
     // 整个实例必须是可变的，Rust 并不允许只将某个字段标记为可变
-    let mut s2 = Struct {
-        a: 7,
-        b: true,
-        c: 7.13,
-    };
+    let mut s2 = Struct { a: 7, b: true, c: 7.13 };
     s2.b = false;
     println!("{}", s2.b);
 
     // 字段初始化简写语法(field init shorthand)
     let a = 13;
-    let s3 = Struct {
-        a,
-        b: false,
-        c: 7.13,
-    };
+    let s3 = Struct { a, b: false, c: 7.13 };
     println!("{}", s3.a);
 
     // 结构体更新语法(struct update syntax)

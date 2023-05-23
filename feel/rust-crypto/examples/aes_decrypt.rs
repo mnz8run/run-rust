@@ -8,11 +8,7 @@ use crypto::{
     symmetriccipher::SymmetricCipherError,
 };
 
-fn aes256_cbc_decrypt(
-    encrypted_data: &[u8],
-    key: &[u8],
-    iv: &[u8],
-) -> Result<Vec<u8>, SymmetricCipherError> {
+fn aes256_cbc_decrypt(encrypted_data: &[u8], key: &[u8], iv: &[u8]) -> Result<Vec<u8>, SymmetricCipherError> {
     let mut decryptor = cbc_decryptor(KeySize256, key, iv, blockmodes::PkcsPadding);
 
     let mut final_result = Vec::<u8>::new();
@@ -22,13 +18,7 @@ fn aes256_cbc_decrypt(
 
     loop {
         let result = decryptor.decrypt(&mut read_buffer, &mut write_buffer, true)?;
-        final_result.extend(
-            write_buffer
-                .take_read_buffer()
-                .take_remaining()
-                .iter()
-                .map(|&i| i),
-        );
+        final_result.extend(write_buffer.take_read_buffer().take_remaining().iter().map(|&i| i));
         match result {
             BufferResult::BufferUnderflow => break,
             BufferResult::BufferOverflow => {}
