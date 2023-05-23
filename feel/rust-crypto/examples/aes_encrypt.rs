@@ -19,13 +19,7 @@ fn aes256_cbc_encrypt(data: &[u8], key: &[u8], iv: &[u8]) -> Result<Vec<u8>, Sym
     loop {
         let result = encryptor.encrypt(&mut read_buffer, &mut write_buffer, true)?;
 
-        final_result.extend(
-            write_buffer
-                .take_read_buffer()
-                .take_remaining()
-                .iter()
-                .map(|&i| i),
-        );
+        final_result.extend(write_buffer.take_read_buffer().take_remaining().iter().map(|&i| i));
 
         match result {
             BufferResult::BufferUnderflow => break,

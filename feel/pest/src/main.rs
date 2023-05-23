@@ -90,13 +90,7 @@ fn parse_json_file(file: &str) -> Result<JSONValue, Error<Rule>> {
                 pair.into_inner()
                     .map(|pair| {
                         let mut inner_rules = pair.into_inner();
-                        let name = inner_rules
-                            .next()
-                            .unwrap()
-                            .into_inner()
-                            .next()
-                            .unwrap()
-                            .as_str();
+                        let name = inner_rules.next().unwrap().into_inner().next().unwrap().as_str();
                         let value = parse_value(inner_rules.next().unwrap());
                         (name, value)
                     })
@@ -107,13 +101,7 @@ fn parse_json_file(file: &str) -> Result<JSONValue, Error<Rule>> {
             Rule::number => JSONValue::Number(pair.as_str().parse().unwrap()),
             Rule::boolean => JSONValue::Boolean(pair.as_str().parse().unwrap()),
             Rule::null => JSONValue::Null,
-            Rule::json
-            | Rule::EOI
-            | Rule::pair
-            | Rule::value
-            | Rule::inner
-            | Rule::char
-            | Rule::WHITESPACE => unreachable!(),
+            Rule::json | Rule::EOI | Rule::pair | Rule::value | Rule::inner | Rule::char | Rule::WHITESPACE => unreachable!(),
         }
     }
 
