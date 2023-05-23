@@ -16,12 +16,8 @@ pub fn aes_ctr_mode() {
     let key: [u8; 32] = [0; 32];
     let iv: [u8; 16] = [0; 16];
 
-    let encrypted_data = aes256_ctr_encrypt(message.as_bytes(), &key, &iv)
-        .ok()
-        .unwrap();
-    let decrypted_data = aes256_ctr_decrypt(&encrypted_data[..], &key, &iv)
-        .ok()
-        .unwrap();
+    let encrypted_data = aes256_ctr_encrypt(message.as_bytes(), &key, &iv).ok().unwrap();
+    let decrypted_data = aes256_ctr_decrypt(&encrypted_data[..], &key, &iv).ok().unwrap();
 
     let crypt_message = str::from_utf8(decrypted_data.as_slice()).unwrap();
 
@@ -29,11 +25,7 @@ pub fn aes_ctr_mode() {
     println!("{}", crypt_message);
 }
 
-fn aes256_ctr_encrypt(
-    data: &[u8],
-    key: &[u8],
-    iv: &[u8],
-) -> Result<Vec<u8>, symmetriccipher::SymmetricCipherError> {
+fn aes256_ctr_encrypt(data: &[u8], key: &[u8], iv: &[u8]) -> Result<Vec<u8>, symmetriccipher::SymmetricCipherError> {
     let mut final_result = Vec::<u8>::new();
     let mut read_buffer = buffer::RefReadBuffer::new(data);
     let mut buffer = [0; 4096];
@@ -42,21 +34,11 @@ fn aes256_ctr_encrypt(
     let mut encoder = CtrMode::new(AesSafe256Encryptor::new(key), iv.to_vec());
     encoder.encrypt(&mut read_buffer, &mut write_buffer, true)?;
 
-    final_result.extend(
-        write_buffer
-            .take_read_buffer()
-            .take_remaining()
-            .iter()
-            .map(|&i| i),
-    );
+    final_result.extend(write_buffer.take_read_buffer().take_remaining().iter().map(|&i| i));
     Ok(final_result)
 }
 
-fn aes256_ctr_decrypt(
-    encrypted_data: &[u8],
-    key: &[u8],
-    iv: &[u8],
-) -> Result<Vec<u8>, symmetriccipher::SymmetricCipherError> {
+fn aes256_ctr_decrypt(encrypted_data: &[u8], key: &[u8], iv: &[u8]) -> Result<Vec<u8>, symmetriccipher::SymmetricCipherError> {
     let mut final_result = Vec::<u8>::new();
     let mut read_buffer = buffer::RefReadBuffer::new(encrypted_data);
     let mut buffer = [0; 4096];
@@ -65,12 +47,6 @@ fn aes256_ctr_decrypt(
     let mut decoder = CtrMode::new(AesSafe256Encryptor::new(key), iv.to_vec());
     decoder.decrypt(&mut read_buffer, &mut write_buffer, true)?;
 
-    final_result.extend(
-        write_buffer
-            .take_read_buffer()
-            .take_remaining()
-            .iter()
-            .map(|&i| i),
-    );
+    final_result.extend(write_buffer.take_read_buffer().take_remaining().iter().map(|&i| i));
     Ok(final_result)
 }

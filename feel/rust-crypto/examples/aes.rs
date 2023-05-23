@@ -29,9 +29,7 @@ pub fn aes_cbc_mode() {
     // String::from_utf8((&aes_key).to_vec()).unwrap()
     // let ceshi = String::from_utf8((&aes_key).to_vec()).unwrap();
 
-    let encrypted_data = aes256_cbc_encrypt(message.as_bytes(), &aes_key, &aes_iv)
-        .ok()
-        .unwrap();
+    let encrypted_data = aes256_cbc_encrypt(message.as_bytes(), &aes_key, &aes_iv).ok().unwrap();
 
     let encrypted_base64 = general_purpose::STANDARD.encode(&encrypted_data);
     println!("encrypted_base64 {}", encrypted_base64);
@@ -39,9 +37,7 @@ pub fn aes_cbc_mode() {
     // let encrypted_message = str::from_utf8(encrypted_data.as_slice()).unwrap();
     // println!("encrypted_message {}", encrypted_message);
 
-    let decrypted_data = aes256_cbc_decrypt(&encrypted_data[..], &aes_key, &aes_iv)
-        .ok()
-        .unwrap();
+    let decrypted_data = aes256_cbc_decrypt(&encrypted_data[..], &aes_key, &aes_iv).ok().unwrap();
 
     let crypt_message = str::from_utf8(decrypted_data.as_slice()).unwrap();
 
@@ -51,13 +47,8 @@ pub fn aes_cbc_mode() {
 
 // Encrypt a buffer with the given key and iv using AES-256/CBC/Pkcs encryption.
 // keywords: aes cbc 256 pkcs7 utf-8 base64
-fn aes256_cbc_encrypt(
-    data: &[u8],
-    key: &[u8],
-    iv: &[u8],
-) -> Result<Vec<u8>, symmetriccipher::SymmetricCipherError> {
-    let mut encryptor =
-        aes::cbc_encryptor(aes::KeySize::KeySize256, key, iv, blockmodes::PkcsPadding);
+fn aes256_cbc_encrypt(data: &[u8], key: &[u8], iv: &[u8]) -> Result<Vec<u8>, symmetriccipher::SymmetricCipherError> {
+    let mut encryptor = aes::cbc_encryptor(aes::KeySize::KeySize256, key, iv, blockmodes::PkcsPadding);
 
     let mut final_result = Vec::<u8>::new();
     let mut read_buffer = buffer::RefReadBuffer::new(data);
@@ -67,13 +58,7 @@ fn aes256_cbc_encrypt(
     loop {
         let result = encryptor.encrypt(&mut read_buffer, &mut write_buffer, true)?;
 
-        final_result.extend(
-            write_buffer
-                .take_read_buffer()
-                .take_remaining()
-                .iter()
-                .map(|&i| i),
-        );
+        final_result.extend(write_buffer.take_read_buffer().take_remaining().iter().map(|&i| i));
 
         match result {
             BufferResult::BufferUnderflow => break,
@@ -85,13 +70,8 @@ fn aes256_cbc_encrypt(
 }
 
 // Decrypts a buffer with the given key and iv using AES-256/CBC/Pkcs encryption.
-fn aes256_cbc_decrypt(
-    encrypted_data: &[u8],
-    key: &[u8],
-    iv: &[u8],
-) -> Result<Vec<u8>, symmetriccipher::SymmetricCipherError> {
-    let mut decryptor =
-        aes::cbc_decryptor(aes::KeySize::KeySize256, key, iv, blockmodes::PkcsPadding);
+fn aes256_cbc_decrypt(encrypted_data: &[u8], key: &[u8], iv: &[u8]) -> Result<Vec<u8>, symmetriccipher::SymmetricCipherError> {
+    let mut decryptor = aes::cbc_decryptor(aes::KeySize::KeySize256, key, iv, blockmodes::PkcsPadding);
 
     let mut final_result = Vec::<u8>::new();
     let mut read_buffer = buffer::RefReadBuffer::new(encrypted_data);
@@ -100,13 +80,7 @@ fn aes256_cbc_decrypt(
 
     loop {
         let result = decryptor.decrypt(&mut read_buffer, &mut write_buffer, true)?;
-        final_result.extend(
-            write_buffer
-                .take_read_buffer()
-                .take_remaining()
-                .iter()
-                .map(|&i| i),
-        );
+        final_result.extend(write_buffer.take_read_buffer().take_remaining().iter().map(|&i| i));
         match result {
             BufferResult::BufferUnderflow => break,
             BufferResult::BufferOverflow => {}

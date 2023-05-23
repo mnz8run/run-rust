@@ -28,11 +28,7 @@ fn main() {
             Cell::new("This is another text"),
             Cell::new("This is the third text"),
         ])
-        .add_row(vec![
-            "This is another text",
-            "Now\nadd some\nmulti line stuff",
-            "This is awesome",
-        ]);
+        .add_row(vec!["This is another text", "Now\nadd some\nmulti line stuff", "This is awesome"]);
 
     println!("{table}");
 }
