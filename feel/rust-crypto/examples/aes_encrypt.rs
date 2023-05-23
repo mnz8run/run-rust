@@ -45,9 +45,9 @@ fn aes_cbc_mode(message: &str, key: &str) -> String {
         .ok()
         .expect("encrypted_data there_error");
 
-    let encrypted_base64 = general_purpose::STANDARD.encode(encrypted_data);
+    
 
-    encrypted_base64
+    general_purpose::STANDARD.encode(encrypted_data)
 }
 
 fn main() {

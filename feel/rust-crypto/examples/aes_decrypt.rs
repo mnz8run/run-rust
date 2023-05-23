@@ -55,9 +55,9 @@ fn aes_cbc_mode(message: &str, key: &str) -> String {
         Err(error) => panic!("aes256_cbc_decrypt error: {:?}", error),
     };
 
-    let crypt_message = String::from_utf8(decrypted_data).expect("crypt_message there_error");
+    
 
-    crypt_message
+    String::from_utf8(decrypted_data).expect("crypt_message there_error")
 }
 
 fn main() {
