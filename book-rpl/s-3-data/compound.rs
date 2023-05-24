@@ -32,4 +32,9 @@ fn main() {
     // 索引访问
     let first_char = same_char_array[0];
     println!("{first_char}");
+
+    // https://stackoverflow.com/questions/58732657/how-many-elements-can-a-rust-array-have
+    // https://doc.rust-lang.org/nomicon/vec/vec-alloc.html
+    let x: [u8; std::usize::MAX] = [0; std::usize::MAX];
+    println!("Hello, world! {}", x.len());
 }
