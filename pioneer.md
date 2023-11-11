@@ -44,5 +44,4 @@ The `members` list also supports [globs](https://docs.rs/glob/0.3.0/glob/struct.
 
 ## cargo
 
-默认情况下：
-**package name 取自 directory name; binary name 取自 package name**
+默认情况下：**package name 取自 directory name; binary name 取自 package name**
