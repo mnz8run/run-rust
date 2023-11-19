@@ -45,3 +45,20 @@ The `members` list also supports [globs](https://docs.rs/glob/0.3.0/glob/struct.
 ## cargo
 
 默认情况下：**package name 取自 directory name; binary name 取自 package name**
+
+## workspace 模式下 cargo add
+
+`cargo add momoa -p feel-momoa`
+
+```
+$ cargo add momoa
+warning: some crates are on edition 2021 which defaults to `resolver = "2"`, but virtual workspaces default to `resolver = "1"`
+note: to keep the current resolver, specify `workspace.resolver = "1"` in the workspace root's manifest
+note: to use the edition 2021 resolver, specify `workspace.resolver = "2"` in the workspace root's manifest
+error: `cargo add` could not determine which package to modify. Use the `--package` option to specify a package.
+available packages: mod-rs, rand-char, feel-comfy-table, feel-momoa, feel-pest, feel-rust-crypto, rpl-macros, rpl-test, rpl-cargo, rpl-package, rpl-crate, rpl-module, rpl-variable, rpl-function, rpl-data, rpl-closure, rpl-control, rpl-error-handle, rpl-generic, rpl-iterator, rpl-lifetime, rpl-method, rpl-ownership, rpl-reference, rpl-slice, rpl-trait
+```
+
+## feel 目录下创建
+
+`cargo init feel/momoa --name feel-momoa`
