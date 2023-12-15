@@ -55,3 +55,19 @@
   `mod child` in tool.rs
 
   粗略地说, mod.rs 有点像 JavaScript index.js 或者 python `__init__.py`。但只是某种程度。这在 Rust 中有点复杂。
+
+- 判断文件大小
+
+`fs::metadata(path)`
+`let file_size = metadata.len();`
+
+- match 可以不返回
+
+```
+match xxx {
+    Ok(_) => {}
+    Err(e) => {}
+};
+```
+
+有分号，不是表达式，所以不会返回。一定要 `=> { // some operate }`, 不可以 `=> some operate`, `=> some operate` 是表达式。
