@@ -8,6 +8,7 @@ edition = "2021"
 [dependencies]
 base64 = "0.21.0"
 rust-crypto = "^0.2"
+rustc-serialize = "0.3.25"
 
 [[example]]
 name = "md5"
