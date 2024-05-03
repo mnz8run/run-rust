@@ -1,1 +1,1 @@
-pub const WAY: &str = "mod.rs way child module";
+pub const WAY: &str = "note/mod/src/from_mod/from_mod_child.rs";
