@@ -1,4 +1,5 @@
 [workspace]
+# members 解析规则
 # The members list also supports globs to match multiple paths, using typical filename glob patterns like * and ?.
 # https://docs.rs/glob/0.3.0/glob/struct.Pattern.html
 members = ["note/*", "feel/*", "book-rpl/*"]
@@ -7,17 +8,28 @@ members = ["note/*", "feel/*", "book-rpl/*"]
 rand = "0.8.5"
 comfy-table = "6.1.4"
 
-# 所有的 cargo.toml 中，package-name 和 dependencies 中的相同
-# cargo run -p package-name, eg: cargo run -p pest, 会出下如下错误：
 
+# 当出现相同包名(package-name)时，包括 workspace 中所有的 Cargo.toml 文件
+# cargo run -p package-name 运行会出现错误
+
+# 例子1
+# -----------------------------------------------------------------------------------------------------------------------
 # error: There are multiple `comfy-table` packages in your project, and the specification `comfy-table` is ambiguous.
 # Please re-run this command with `-p <spec>` where `<spec>` is one of the following:
 #   comfy-table@0.1.0
 #   comfy-table@6.1.4
+# -----------------------------------------------------------------------------------------------------------------------
+# comfy-table@0.1.0 是在 workspace 中的一个 member, 自己创建的包
+# comfy-table@6.1.4 是 comfy-table@0.1.0 中引用的库 lib
 
+
+# 例子2
+# eg: cargo run -p pest, 会出下如下错误：
+# -----------------------------------------------------------------------------------------------------------------------
 # error: There are multiple `pest` packages in your project, and the specification `pest` is ambiguous.
 # Please re-run this command with `-p <spec>` where `<spec>` is one of the following:
 #   pest@0.1.0
 #   pest@2.5.5
-
+# -----------------------------------------------------------------------------------------------------------------------
+# 这种情况下, pest@0.1.0 的 bin 是可以运行的
 # 使用 cargo run --bin bin-name 可以运行 eg: cargo run --bin pest
