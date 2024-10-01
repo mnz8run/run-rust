@@ -1,0 +1,15 @@
+[package]
+name = "feel"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rand = { workspace = true }
+comfy-table = "6.1.4"
+pest = "2.5.5"
+pest_derive = "2.5.5"
+base64 = "0.21.0"
+rust-crypto = "^0.2"
+rustc-serialize = "0.3.25"

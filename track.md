@@ -48,3 +48,9 @@ closure
 iterator
 
 error handle
+
+## flow
+
+cargo new packages/sample --vcs none
+
+cargo new hints
