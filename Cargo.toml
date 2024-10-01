@@ -2,13 +2,12 @@
 # members 解析规则
 # The members list also supports globs to match multiple paths, using typical filename glob patterns like * and ?.
 # https://docs.rs/glob/0.3.0/glob/struct.Pattern.html
-members = ["note/*", "feel/*", "book-rpl/*"]
+members = ["hints", "packages/*"]
 # warning: virtual workspace defaulting to `resolver = "1"` despite one or more workspace members being on edition 2021 which implies `resolver = "2"`
 resolver = "2"
 
 [workspace.dependencies]
 rand = "0.8.5"
-comfy-table = "6.1.4"
 
 
 # 当出现相同包名(package-name)时，包括 workspace 中所有的 Cargo.toml 文件
