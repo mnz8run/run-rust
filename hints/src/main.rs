@@ -1,3 +1,4 @@
+mod grammar;
 mod raw_compound;
 mod raw_crate;
 mod raw_enum;
